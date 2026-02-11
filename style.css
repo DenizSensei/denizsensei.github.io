@@ -1,0 +1,273 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --accent-color: #38bdf8; /* Modern gökyüzü mavisi */
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    min-height: 100vh;
+    
+    /* Arka Plan Görseli ve Karartma Overlay */
+    background-image: linear-gradient(rgba(11, 15, 26, 0.85), rgba(11, 15, 26, 0.85)), 
+                      url('assets/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent-color);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+/* Küçültülmüş Kompakt Hero/Profil Alanı */
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem !important; /* Daha kompakt hale getirildi */
+    margin-top: 1rem;
+}
+
+.profile-pic {
+    width: 120px; /* İstediğin gibi küçültüldü */
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+    flex-shrink: 0;
+}
+
+.hero-content h1 {
+    font-size: 2.2rem;
+    margin: 0;
+    background: linear-gradient(to right, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-bio-short {
+    margin-top: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Glassmorphism Card Tasarımı */
+.card {
+    background: rgba(30, 41, 59, 0.6); 
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Butonlar ve Linkler */
+.btn-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.btn.primary {
+    background: linear-gradient(135deg, #38bdf8, #818cf8);
+    color: #fff;
+	margin-bottom: 1rem;
+}
+
+.btn.secondary {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.btn:hover {
+    filter: brightness(1.2);
+    transform: scale(1.02);
+}
+
+/* Skill ve Proje Detayları */
+.subtitle {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.skills-grid {
+    display: grid;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.skill-category {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.tech-tags {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tech-tags li {
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--accent-color);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* Media/Video Alanları */
+.media-box {
+    width: 100%;
+    border-radius: 12px;
+    margin: 1.2rem 0;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+    .btn-group {
+        justify-content: center;
+    }
+}
+
+/* Easter Egg Layout */
+.title-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.easter-egg {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.egg-badge {
+    background: linear-gradient(135deg, #38bdf8, #818cf8);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    animation: bounce 2s infinite;
+}
+
+.egg-content {
+    visibility: hidden;
+    width: 200px;
+    background-color: #1e293b;
+    border: 2px solid var(--accent-color);
+    border-radius: 12px;
+    padding: 10px;
+    position: absolute;
+    z-index: 100;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.egg-content img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.egg-content p {
+    font-size: 0.75rem;
+    margin: 0;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.easter-egg:hover .egg-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-6px);}
+    60% {transform: translateY(-3px);}
+}
